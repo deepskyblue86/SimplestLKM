@@ -1,14 +1,17 @@
-#include<linux/init.h>
-#include<linux/module.h>
-MODULE_LICENSE("GPL");
-MODULE_AUTHOR("maK");
+#include <linux/kernel.h>
+#include <linux/module.h>
 
-static int hello_init(void){
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("deepskyblue86");
+
+static int hello_init(void)
+{
 	printk(KERN_ALERT "Hello world!\n");
 	return 0;
 }
 
-static void hello_exit(void){
+static void hello_exit(void)
+{
 	printk(KERN_ALERT "Goodbye cruel world\n");
 }
 
