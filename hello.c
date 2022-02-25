@@ -6,13 +6,13 @@ MODULE_AUTHOR("deepskyblue86");
 
 static int hello_init(void)
 {
-	printk(KERN_ALERT "Hello world!\n");
+	pr_info("Hello world!\n");
 	return 0;
 }
 
 static void hello_exit(void)
 {
-	printk(KERN_ALERT "Goodbye cruel world\n");
+	pr_info("Goodbye cruel world\n");
 }
 
 module_init(hello_init);
