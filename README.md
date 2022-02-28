@@ -1,18 +1,20 @@
-SimplestLKM
-===========
+# Fork of SimplestLKM
 
-"Hello World" Linux Kernel Module
+This is a very simple Linux Kernel Module.
 
-Read simple output example messages in /var/log/messages
+## Install
 
-to install...
-
+Build the module:
+```
 make
+```
 
-insmod hello.ko
+Wait for the messages in a shell:
+```
+journalctl -f -k
+```
 
-tail -n 1 /var/log/messages
-
-rmmod hello
-
-tail -n 1 /var/log/messages
+In another shell, insert, wait a bit and remove the module:
+```
+sudo insmod hello.ko; sleep 10; sudo rmmod hello
+```
